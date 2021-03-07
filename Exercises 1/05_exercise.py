@@ -1,5 +1,4 @@
-# Proszę napisać funkcję znajdującą minimum i maksimum
-# w tablicy o długości n, wykonując a 3/2n + c porównań.
+# Proszę napisać funkcję znajdującą minimum i maksimum w tablicy o długości n, wykonując a 3/2n + c porównań.
 
 
 def min_max(T):

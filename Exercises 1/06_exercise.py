@@ -1,5 +1,4 @@
-# Proszę zaimplementować wyszukiwanie binarne w posortowanej
-# tablicy, znajdujące najmniejszy indeks z daną wartością.
+# Proszę zaimplementować wyszukiwanie binarne w posortowanej tablicy, znajdujące najmniejszy indeks z daną wartością.
 
 
 def binary_search(T, i, j, x):

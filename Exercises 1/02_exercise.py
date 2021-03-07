@@ -1,5 +1,4 @@
-# Proszę zaimplementować wstawianie Node'a do posortowanej
-# listy jednokierunkowej.
+# Proszę zaimplementować wstawianie Node'a do posortowanej listy jednokierunkowej.
 
 
 class Node:

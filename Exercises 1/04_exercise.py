@@ -22,15 +22,6 @@ def reverse_list(L):
     return q
 
 
-def insert_to_node(node, L):
-    start = L
-    while L.next is not None and L.next.value < node.value:
-        L = L.next
-    node.next = L.next
-    L.next = node
-    return start
-
-
 def printList(L):
     if L is not None:
         print(L.value, end=' ')
