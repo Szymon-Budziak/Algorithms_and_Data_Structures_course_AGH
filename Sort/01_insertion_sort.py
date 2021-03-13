@@ -1,3 +1,8 @@
+from time import perf_counter
+from random import randint, seed
+seed(100)
+
+
 def insertion_sort(T):
     for i in range(1, len(T)):
         key = T[i]
@@ -9,5 +14,8 @@ def insertion_sort(T):
     return T
 
 
-T = [5, 2, 4, 6, 1, 3]
+T = [randint(1, 1000) for _ in range(10000)]
+start = perf_counter()
 print(insertion_sort(T))
+end = perf_counter()
+print(end-start)

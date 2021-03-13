@@ -5,16 +5,10 @@ seed(100)
 
 
 def merge(T, p, q, r):
-    n1 = q-p+1
-    n2 = r-q
-    L = [0]*(n1+1)
-    R = [0]*(n2+1)
-    for i in range(n1):
-        L[i] = T[p+i]
-    for j in range(n2):
-        R[j] = T[q+j+1]
-    L[-1] = inf
-    R[-1] = inf
+    L = T[p:q+1]
+    R = T[q+1:r+1]
+    L.append(inf)
+    R.append(inf)
     i = j = 0
     for k in range(p, r+1):
         if L[i] <= R[j]:
@@ -26,7 +20,9 @@ def merge(T, p, q, r):
 
 
 def merge_sort(T, p, r):
-    if p < r:
+    if len(T) <= 1:
+        return T
+    elif p < r:
         m = (p+r) // 2
         merge_sort(T, p, m)
         merge_sort(T, m+1, r)
