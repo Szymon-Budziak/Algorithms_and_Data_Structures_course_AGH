@@ -1,4 +1,5 @@
-# Proszę zaproponować jak najszybszy algorytm sortujący n elementową tablicę zawierająca liczby ze zbioru [0, 1, 2, ..., n^2-1]
+# Proszę zaproponować jak najszybszy algorytm sortujący n elementową tablicę zawierająca liczby
+# ze zbioru [0, 1, 2, ..., n^2-1].
 
 
 def counting_sort(T, k):
