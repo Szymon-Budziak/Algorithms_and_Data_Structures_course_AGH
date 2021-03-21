@@ -2,7 +2,7 @@ from random import randint, shuffle, seed
 from math import ceil
 
 
-def insertion_sort(T, p, r):
+def median(T, p, r):
     for i in range(p+1, r):
         key = T[i]
         j = i-1
@@ -10,11 +10,6 @@ def insertion_sort(T, p, r):
             T[j+1] = T[j]
             j -= 1
         T[j+1] = key
-    return T
-
-
-def median(T, p, r):
-    insertion_sort(T, p, r)
     return (p+r)//2
 
 
@@ -31,8 +26,7 @@ def partition(T, p, r, pivot):
 
 def median_medians(A, p, r):
     n = r-p+1
-    index = p
-    start = p
+    index = start = p
     end = r
     for i in range(p, r, 5):
         if i+5 > r:
