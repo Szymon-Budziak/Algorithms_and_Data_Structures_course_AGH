@@ -34,10 +34,6 @@ def median_medians(A, p, r):
     index = p
     start = p
     end = r
-    if n <= 5:
-        pivot = median(A, p, r)
-        q = partition(A, start, end, pivot)
-        return q
     for i in range(p, r, 5):
         if i+5 > r:
             break
