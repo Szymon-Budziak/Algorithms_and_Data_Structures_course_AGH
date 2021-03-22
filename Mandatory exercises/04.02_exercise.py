@@ -38,22 +38,17 @@ def digits(number):
     return length
 
 
-def map(T):
+def sort(T):
     max_length = 0
-    num_of_digits = 0
     for i in range(len(T)):
         max_length = max(max_length, digits(T[i]))
     for i in range(len(T)):
-        num_of_digits = digits(T[i])
-        if num_of_digits < max_length:
-            T[i] *= 10*(max_length-num_of_digits)
+        T[i] += (10**max_length)
     radix_sort(T)
     for i in range(len(T)):
-        if T[i] % 10 == 0:
-            T[i] //= 10
+        T[i] -= (10**max_length)
 
 
-T = [349, 12, 12, 283, 349, 283, 283, 12]
-print(T)
-map(T)
+T = [365, 45137, 12, 45137, 12, 12, 45137, 365, 12]
+sort(T)
 print(T)
