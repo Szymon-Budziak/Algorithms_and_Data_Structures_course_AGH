@@ -15,9 +15,7 @@ def insertion_sort(T):
 
 
 def bucket_sort(T):
-    bucket = list()
-    for i in range(len(T)):
-        bucket.append([])
+    bucket = [[] for _ in range(len(T))]
     for i in T:
         index = int(10*i)
         bucket[index].append(i)

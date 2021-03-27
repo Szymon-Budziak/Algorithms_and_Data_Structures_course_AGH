@@ -17,7 +17,7 @@ def counting_sort(T, k):
         T[i] = B[i]
 
 
-k = 100
+k = 10000
 T = [randint(0, k-1) for _ in range(10000)]
 start = perf_counter()
 counting_sort(T, k)

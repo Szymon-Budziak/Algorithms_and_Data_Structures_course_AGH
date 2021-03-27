@@ -1,16 +1,21 @@
+from time import perf_counter
+from random import randint, seed
+seed(100)
+
+
 def counting_sort(T, k):
     C = [0]*len(T)
     B = [0]*10
     for i in range(len(T)):
-        index = T[i]/k
-        B[int(index % 10)] += 1
+        index = int((T[i]/k) % 10)
+        B[index] += 1
     for i in range(1, 10):
         B[i] += B[i-1]
     j = len(T)-1
     while j >= 0:
-        index = T[j]/k
-        C[B[int(index % 10)]-1] = T[j]
-        B[int(index % 10)] -= 1
+        index = int((T[j]/k) % 10)
+        C[B[index]-1] = T[j]
+        B[index] -= 1
         j -= 1
     for i in range(len(T)):
         T[i] = C[i]
@@ -26,6 +31,9 @@ def radix_sort(T):
         i *= 10
 
 
-T = [349, 12, 12, 283, 349, 283, 283, 12]
+T = [randint(1, 1000) for _ in range(10000)]
+start = perf_counter()
 radix_sort(T)
 print(T)
+end = perf_counter()
+print(end-start)
