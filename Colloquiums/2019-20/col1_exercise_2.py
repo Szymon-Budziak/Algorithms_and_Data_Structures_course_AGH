@@ -17,17 +17,22 @@ def partition(T, p, r):
     return i+1
 
 
-def quickselect(T, p, r):
-    while p < r:
-        q = partition(T, p, r)
-        quickselect(T, p, q-1)
-        p = q+1
+def quickselect(T, p, r, x):
+    if p == r:
+        return T[p]
+    q = partition(T, p, r)
+    if q == x:
+        return T[x]
+    elif x < q:
+        return quickselect(T, p, q-1, x)
+    else:
+        return quickselect(T, q+1, r, x)
 
 
 def section(T, p, r):
-    quickselect(T, 0, r)
+    quickselect(T, 0, len(T)-1, r)
     # Average quickselect performance is O(n)
-    quickselect(T, p, r)
+    quickselect(T, 0, len(T)-1, p)
     # The whole algorithm complexity at the average case is 2*O(n) = O(n)
     return T[p:r+1]
 

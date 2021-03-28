@@ -74,5 +74,4 @@ def pretty_sort(T):
 
 
 T = [123, 455, 1266, 114577, 2344, 6733]
-pretty_sort(T)
 print(pretty_sort(T))
