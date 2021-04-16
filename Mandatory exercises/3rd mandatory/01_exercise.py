@@ -10,10 +10,9 @@ def knapsack(W, P, max_W):
     for i in range(1, len(W)):
         for j in range(sum_P, -1, -1):
             if j < sum_P:
-                F[i][j] = min(F[i-1][j], F[i-1][j-P[i]] +
-                              W[i], F[i][j], F[i][j+1])
+                F[i][j] = min(F[i-1][j], F[i-1][j-P[i]] + W[i])
             else:
-                F[i][j] = min(F[i-1][j], F[i-1][j-P[i]]+W[i], F[i][j])
+                F[i][j] = F[i-1][j]
     for i in range(sum_P, -1, -1):
         if F[-1][i] <= max_W:
             return i
