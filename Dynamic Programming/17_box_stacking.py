@@ -1,8 +1,8 @@
-# Given set of #D boxes, where each box has height, width and length. We have
-# unlimited supply fo these boxes. Find the maximum height of boxes placement that
-# the going on the top should have strictly less length and width than the box on
-# which it is going. Also print how to place the boxes on top of each other to get
-# this maximum height.
+# Given set of 3D boxes, where each box has height, width and length. We have
+# unlimited supply of these boxes. Find the maximum height of boxes placement that
+# the box going on the top should have strictly less length and width than the
+# box on which it is going. Also print how to place the boxes on top of each other
+# to get this maximum height.
 
 
 def possible_rotations(box, rotations):
