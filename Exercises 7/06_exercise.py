@@ -11,12 +11,17 @@ def build_tower(T):
     for i in range(len(T)):
         T[i].sort()
         summary.append(sum(T[i]))
-    count = tower_height = 0
+    count = tower_height = idx = 0
     while tower_height < max(summary):
-        index = summary.index(max(summary))
-        height = T[index].pop()
+        maximum = 0
+        for i in range(len(T)):
+            if len(T[i]) != 0:
+                if T[i][-1] > maximum:
+                    maximum = T[i][-1]
+                    idx = i
+        height = T[idx].pop()
         tower_height += height
-        summary[index] -= height
+        summary[idx] -= height
         count += 1
     return count
 
