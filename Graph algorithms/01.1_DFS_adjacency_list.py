@@ -4,7 +4,7 @@
 # 1st solution
 
 def DFS(graph, root):
-    visited = [False] * (len(graph) + 1)
+    visited = [False] * len(graph)
     result = [root]
 
     def dfs_visit(u, graph, visited, result):
@@ -28,17 +28,7 @@ def dfs(graph, node, visited):
     return visited
 
 
-graph = {
-    1: [2, 9],
-    2: [1],
-    3: [4, 5, 6, 9],
-    4: [3],
-    5: [3, 8],
-    6: [3, 7],
-    7: [6, 9],
-    8: [5, 7],
-    9: [1, 3, 7]
-}
+graph = [[1, 8], [0], [3, 4, 5, 8], [2], [2, 7], [2, 6], [5, 8], [4, 6], [0, 2, 6]]
 
 result1 = DFS(graph, 1)
 print(result1)
