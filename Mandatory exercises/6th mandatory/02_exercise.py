@@ -21,8 +21,8 @@ def four_length_cycle(graph):
             min_distance = inf
             for vertex in graph[u]:
                 if not visited[vertex]:
-                    for i in graph[vertex]:
-                        min_distance = min(min_distance, distance[i])
+                    for n in graph[vertex]:
+                        min_distance = min(min_distance, distance[n])
                     distance[vertex] = min_distance + 1
                     if distance[vertex] == 2:
                         count = 0
