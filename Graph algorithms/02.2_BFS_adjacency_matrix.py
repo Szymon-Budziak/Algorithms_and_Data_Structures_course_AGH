@@ -12,7 +12,7 @@ def BFS(graph, root):
         u = queue.get()
         result.append(u)
         for v in range(len(graph)):
-            if visited[v] is False and graph[u][v]:
+            if visited[v] is False and graph[u][v] == 1:
                 queue.put(v)
                 visited[v] = True
     return result
