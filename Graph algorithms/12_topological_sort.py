@@ -11,7 +11,7 @@ def dfs(graph, source, visited, result):
     result.insert(0, source)
 
 
-def topological_sorting(graph):
+def topological_sort(graph):
     visited = [False] * len(graph)
     result = []
     for i in range(len(graph)):
@@ -21,4 +21,4 @@ def topological_sorting(graph):
 
 
 graph = [[1, 2], [2, 3], [], [4, 5, 6], [], [], [], [3], [7]]
-print(topological_sorting(graph))
+print(topological_sort(graph))
