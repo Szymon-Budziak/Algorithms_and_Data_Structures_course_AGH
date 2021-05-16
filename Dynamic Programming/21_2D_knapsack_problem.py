@@ -16,8 +16,8 @@ def knapsack_problem_2D(P, W, H):
                 weight = P[k - 1][1]
                 height = P[k - 1][2]
                 if i - height >= 0 and j - weight >= 0:
-                    DP[i][j][k] = max(DP[i][j][k], DP[i][j]
-                    [k - 1], DP[i - height][j - weight][k - 1] + value)
+                    DP[i][j][k] = max(DP[i][j][k], DP[i][j][k - 1],
+                                      DP[i - height][j - weight][k - 1] + value)
                 else:
                     DP[i][j][k] = max(DP[i][j][k], DP[i][j][k - 1])
     return DP[-1][-1][-1]
