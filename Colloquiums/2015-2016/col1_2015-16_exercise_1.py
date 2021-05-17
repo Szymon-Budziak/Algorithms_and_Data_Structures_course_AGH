@@ -9,24 +9,24 @@ from random import randint
 
 def partition(T, p, r):
     pivot = T[r][2]
-    i = p-1
+    i = p - 1
     for j in range(p, r):
         if T[j][2] <= pivot:
             i += 1
             T[i], T[j] = T[j], T[i]
-    T[i+1], T[r] = T[r], T[i+1]
-    return i+1
+    T[i + 1], T[r] = T[r], T[i + 1]
+    return i + 1
 
 
 def quicksort(T, p, r):
     while p < r:
         q = partition(T, p, r)
-        quicksort(T, p, q-1)
-        p = q+1
+        quicksort(T, p, q - 1)
+        p = q + 1
 
 
 def sum_sort(A, B, n):
-    C = [0]*n
+    C = [0] * n
     result = current = start = j = i = 0
     while i <= len(A):
         if current == n:
@@ -42,7 +42,7 @@ def sum_sort(A, B, n):
         i += 1
     # Complexity of while loop which checks for the lowest n-sum up to the
     # biggest m-sum is O(n^2)
-    quicksort(C, 0, n-1)
+    quicksort(C, 0, n - 1)
     # Expected complexity of Quicksort is O(n*log(n))
     start_b = 0
     end_b = n
@@ -56,6 +56,6 @@ def sum_sort(A, B, n):
 
 
 n = 5
-A = [randint(1, 100) for _ in range(n**2)]
-B = [0] * (n**2)
+A = [randint(1, 100) for _ in range(n ** 2)]
+B = [0] * (n ** 2)
 print(sum_sort(A, B, n))
