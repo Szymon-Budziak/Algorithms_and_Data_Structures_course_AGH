@@ -40,7 +40,7 @@ def convert_to_edges(graph):
     return edges
 
 
-def kruskal_algorithm(graph, source):
+def kruskal_algorithm(graph):
     edges = convert_to_edges(graph)
     edges.sort(key=lambda x: x[2])
     MST = []
@@ -62,4 +62,4 @@ graph = [[(1, 7), (2, 8), (3, 3), (4, 2)],
          [(0, 3), (2, 12), (5, 6)],
          [(0, 2), (5, 5)],
          [(2, 4), (3, 6), (4, 5)]]
-print(kruskal_algorithm(graph, 0))
+print(kruskal_algorithm(graph))
