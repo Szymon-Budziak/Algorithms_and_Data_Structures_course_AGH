@@ -1,5 +1,4 @@
-# Kruskal's algorithm for finding MST - minimum spanning tree.
-
+# Kruskal's algorithm for finding MST - minimum spanning tree on adjacency list.
 
 class Node:
     def __init__(self, value):
