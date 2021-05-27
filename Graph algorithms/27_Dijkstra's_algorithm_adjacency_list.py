@@ -17,20 +17,14 @@ def relax(u, v, distance, parent):
 def dijkstra_algorithm(graph, source):
     queue = PriorityQueue()
     queue.put(source)
-    visited = [False] * len(graph)
     parent = [None] * len(graph)
     distance = [inf] * len(graph)
-    for i in range(len(graph)):
-        if i != source:
-            queue.put(i)
     distance[source] = 0
     while not queue.empty():
         u = queue.get()
-        if not visited[u]:
-            visited[u] = True
-            for v in graph[u]:
-                if relax(u, v, distance, parent):
-                    queue.put(v[0])
+        for v in graph[u]:
+            if relax(u, v, distance, parent):
+                queue.put(v[0])
     return parent, distance
 
 
