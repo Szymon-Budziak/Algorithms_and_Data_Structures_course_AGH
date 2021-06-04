@@ -19,12 +19,14 @@ def dijkstra_algorithm(graph, source):
     queue.put(source)
     parent = [None] * len(graph)
     distance = [inf] * len(graph)
+    visited = [False] * len(graph)
     distance[source] = 0
     while not queue.empty():
         u = queue.get()
         for v in graph[u]:
-            if relax(u, v, distance, parent):
+            if relax(u, v, distance, parent) and not visited[v[0]]:
                 queue.put(v[0])
+        visited[u] = True
     return parent, distance
 
 
