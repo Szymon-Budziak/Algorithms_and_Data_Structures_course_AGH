@@ -38,7 +38,6 @@ def cheapest_trip_with_refueling(graph, city_a, city_b, capacity):
                         queue.put((new_graph[vertex][dist], vertex))
         visited[u] = True
     tour = []
-    result = new_graph[city_b][0]
     while city_b != parent[city_a]:
         tour.append(city_b)
         city_b = parent[city_b]
