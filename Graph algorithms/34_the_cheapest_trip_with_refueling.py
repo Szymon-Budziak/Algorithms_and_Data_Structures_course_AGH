@@ -17,16 +17,16 @@ def cheapest_trip_with_refueling(graph, city_a, city_b, capacity):
     for i in range(len(new_graph[0])):
         new_graph[0][i] = i * graph[0][1]
     queue = PriorityQueue()
-    queue.put(city_a)
+    queue.put((0, city_a))
     visited = [False] * len(graph)
     while not queue.empty():
-        u = queue.get()
+        distance, u = queue.get()
         for v in graph[u][0]:
             vertex, dist = v
             if not visited[vertex]:
                 if dist <= capacity:
                     relax(new_graph, vertex, u, dist, graph[vertex][1])
-                    queue.put(vertex)
+                    queue.put((new_graph[vertex][dist], vertex))
         visited[u] = True
     return new_graph[city_b][0]
 
