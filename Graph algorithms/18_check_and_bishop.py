@@ -2,11 +2,11 @@
 # exactly one road leading from each gate to one oasis (but any given oasis can have any number of roads
 # leading to them, oases can also be interconnected by roads). Algocian law requires that if someone
 # enters a city through one gate, they must leave the other. Check of Algocia decided to send a bishop
-# who will read the prohibition on formulating "on the chessboard" (insult majesty) task in every city.
-# Check wants the bishop to visit each city exactly once (but there is no limit how many times the bishop
-# will visit each oasis). Bishop departs from the capital of Algocia city x, and after visiting all cities
-# the bishop has to come back to city x. Find algorithm that determines if there is a suitable route
-# for bishop.
+# who will read the prohibition of formulating tasks "about the chessboard" (insult majesty) task in
+# every city. Check wants the bishop to visit each city exactly once (but there is no limit how many
+# times the bishop will visit each oasis). Bishop departs from the capital of Algocia city x, and after
+# visiting all cities the bishop has to come back to city x. Find algorithm that determines if there
+# is a suitable route for bishop.
 
 
 def check_and_bishop(graph, oasis):
