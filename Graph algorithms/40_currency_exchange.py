@@ -13,7 +13,6 @@ def relax(currencies, cost, parent, j):
 
 
 def currency_exchange(currencies, currency_a, currency_b):
-    E = len(currencies)
     max_vertex = 0
     for i in range(len(currencies)):
         max_vertex = max(max_vertex, currencies[i][0], currencies[i][1])
