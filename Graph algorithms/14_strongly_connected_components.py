@@ -5,7 +5,9 @@
 def SCC(graph):
     visited = [False] * len(graph)
     stack = []
-    DFSUtil(graph, 0, visited, stack)
+    for i in range(len(graph)):
+        if not visited[i]:
+            DFSUtil(graph, i, visited, stack)
     new_graph = [[] for _ in range(len(graph))]
     transpose_graph(graph, new_graph)
     for j in range(len(visited)):
