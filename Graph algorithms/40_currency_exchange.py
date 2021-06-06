@@ -9,7 +9,11 @@
 def relax(currencies, cost, parent, j):
     if cost[currencies[j][1]] < currencies[j][2] * cost[currencies[j][0]]:
         cost[currencies[j][1]] = currencies[j][2] * cost[currencies[j][0]]
+        if currencies[j][0] == parent[currencies[j][1]]:
+            parent[currencies[j][1]] = currencies[j][0]
+            return True
         parent[currencies[j][1]] = currencies[j][0]
+    return False
 
 
 def currency_exchange(currencies, currency_a, currency_b):
@@ -20,9 +24,14 @@ def currency_exchange(currencies, currency_a, currency_b):
     cost = [0] * (max_vertex + 1)
     parent = [None] * (max_vertex + 1)
     cost[currency_a] = 1
+    flag = False
     for i in range(max_vertex - 1):
         for j in range(E):
-            relax(currencies, cost, parent, j)
+            if i != 0:
+                if relax(currencies, cost, parent, j):
+                    flag = True
+            else:
+                relax(currencies, cost, parent, j)
     exchange = []
     while currency_b is not None:
         if exchange.count(currency_b) >= 1:
@@ -31,12 +40,7 @@ def currency_exchange(currencies, currency_a, currency_b):
         exchange.append(currency_b)
         currency_b = parent[currency_b]
     exchange.reverse()
-    currency = []
-    for i in range(len(parent)):
-        if parent[i] in currency:
-            return True, exchange
-        currency.append(parent[i])
-    return False, exchange
+    return flag, exchange
 
 
 currencies = [(0, 1, 4.5),
