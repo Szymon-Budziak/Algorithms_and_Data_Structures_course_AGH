@@ -24,7 +24,7 @@ def dijkstra_algorithm(graph, source):
     while not queue.empty():
         dist, u = queue.get()
         for v in graph[u]:
-            if relax(u, v, distance, parent) and not visited[v[0]]:
+            if not visited[v[0]] and relax(u, v, distance, parent):
                 queue.put((dist + v[1], v[0]))
         visited[u] = True
     return parent, distance
