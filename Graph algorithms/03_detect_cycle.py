@@ -3,16 +3,17 @@
 
 def detect_cycle(graph, source):
     visited = [False] * len(graph)
-    return dfs(graph, source, visited, 0)
+    parent = [None] * len(graph)
+    return dfs(graph, source, visited, parent)
 
 
 def dfs(graph, source, visited, parent):
     visited[source] = True
     for v in graph[source]:
         if not visited[v]:
-            parent = source
-            dfs(graph, v, visited, parent)
-        elif visited[v] and v != parent:
+            parent[v] = source
+            return dfs(graph, v, visited, parent)
+        elif visited[v] and parent[source] != v:
             return True
     return False
 
