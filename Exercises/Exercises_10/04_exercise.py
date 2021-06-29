@@ -24,8 +24,18 @@ def dfs(graph, source, visited, parent):
             parent[v] = source
             return dfs(graph, v, visited, parent)
         elif visited[v] and parent[source] != v:
-            return True
-    return False
+            return True, visited
+    return False, None
+
+
+def double_edge(graph, source):
+    visited = [False] * len(graph)
+    for u in graph[source]:
+        if source in graph[u]:
+            visited[source] = True
+            visited[u] = True
+            return True, visited
+    return False, None
 
 
 def racing(graph):
@@ -46,27 +56,47 @@ def racing(graph):
     for i in range(len(graph)):
         if len(in_out[i]) > 1:
             for j in graph[i]:
-                if len(in_out[j]) > 1 and 1 in in_out[i] and 0 in in_out[j]:
+                if 0 in in_out[j]:
                     to_remove.append((i, j))
+                    in_out[i].remove(1)
+                    in_out[j].remove(0)
     for i in range(len(to_remove)):
         graph[to_remove[i][0]].remove(to_remove[i][1])
-        in_out[to_remove[i][0]].remove(1)
-        in_out[to_remove[i][1]].remove(0)
     to_remove = []
     for i in range(len(graph)):
         if 1 in in_out[i]:
             for j in graph[i]:
                 if 0 in in_out[j]:
                     to_remove.append((i, j))
+                    in_out[i].remove(1)
+                    in_out[j].remove(0)
     for i in range(len(to_remove)):
         graph[to_remove[i][0]].remove(to_remove[i][1])
-    return detect_cycle(graph, 0)
+    visited = [False] * len(graph)
+    for i in range(len(graph)):
+        if not visited[i]:
+            result, visit = detect_cycle(graph, i)
+            if not result:
+                result, visit = double_edge(graph, i)
+                if not result:
+                    return False
+                else:
+                    for i in range(len(visit)):
+                        if visit[i]:
+                            visited[i] = True
+            else:
+                for i in range(len(visit)):
+                    if visit[i]:
+                        visited[i] = True
+    for i in range(len(visited)):
+        if not visited[i]:
+            return False
+    return True
 
 
-graph = [[2, 5],
-         [0],
-         [1, 4],
-         [1],
-         [3, 5],
-         [0, 3]]
+graph = [[1, 2],
+         [2, 3],
+         [0, 4],
+         [4],
+         [3]]
 print(racing(graph))
