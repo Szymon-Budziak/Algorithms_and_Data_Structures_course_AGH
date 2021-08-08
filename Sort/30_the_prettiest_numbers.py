@@ -7,7 +7,7 @@
 # array T from the prettiest to the least pretty.
 
 
-def covert_number(number):
+def convert_number(number):
     actual_number = number
     digits = [0] * 10
     while number > 0:
@@ -41,7 +41,7 @@ def counting_sort(T, idx):
 
 def pretty_sort(T):
     for i in range(len(T)):
-        T[i] = covert_number(T[i])
+        T[i] = convert_number(T[i])
     single_index = 1
     multiple_index = 2
     counting_sort(T, multiple_index)
