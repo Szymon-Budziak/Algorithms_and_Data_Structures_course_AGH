@@ -3,21 +3,30 @@
 #   2) intervals are disjoint,
 #   3) the difference between the earliest start and farthest end is minimal.
 # If there is no solution, the algorithm should say no.
+from math import inf
 
 
 def open_intervals(T, k):
     T.sort(key=lambda x: x[1])
-    start = T[0]
-    count = 1
-    for i in range(1, len(T)):
-        if start[1] <= T[i][0]:
-            start = T[i]
-            count += 1
-            if count == k:
-                return True
-    return "No"
+    best_result = inf
+    result = []
+    for i in range(len(T) - k):
+        actual = [T[i]]
+        j = 1
+        l = i + 1
+        while j < k and l < len(T):
+            if actual[j - 1][1] <= T[l][0]:
+                actual.append(T[l])
+                j += 1
+            l += 1
+        actual_result = actual[j - 1][1] - actual[0][0]
+        if actual_result < best_result and j == k:
+            best_result = actual_result
+            result = actual[:]
+    if len(result) == 0:
+        return False
+    return result
 
 
 T = [(1, 7), (2, 5), (3, 4), (8, 10), (3, 6), (2, 4), (5, 9), (7, 8), (1, 5), (1, 2), (2, 5)]
-k = 4
-print(open_intervals(T, k))
+print(open_intervals(T, 3))
