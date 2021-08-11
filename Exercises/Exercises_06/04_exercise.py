@@ -13,13 +13,16 @@ def jumping_frog(A):
     count = 0
     for i in range(len(A)):
         count += A[i]
-    DP = [[inf]*count for _ in range(len(A))]
+    DP = [[inf] * (count + 1) for _ in range(len(A))]
     DP[0][A[0]] = 0
-    for i in range(1, len(A)):
+    for i in range(len(A)):
         for j in range(count):
-            for k in range(1, i+1):
-                if j+k-A[i] >= 0 and j+k-A[i] < count:
-                    DP[i][j] = min(DP[i][j], DP[i-k][j+k-A[i]]+1)
+            if DP[i][j] != inf:
+                k = i + 1
+                while k < len(A) and j >= k - i:
+                    index = i + j + A[k] - k
+                    DP[k][index] = min(DP[k][index], DP[i][j] + 1)
+                    k += 1
     return min(DP[-1])
 
 
