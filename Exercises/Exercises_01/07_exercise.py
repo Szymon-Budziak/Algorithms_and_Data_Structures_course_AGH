@@ -5,7 +5,7 @@
 def sum_search(T, x):
     l = 0
     r = len(T) - 1
-    while l < r:
+    while l <= r:
         if T[l] + T[r] == x:
             return True
         elif T[l] + T[r] > x:
