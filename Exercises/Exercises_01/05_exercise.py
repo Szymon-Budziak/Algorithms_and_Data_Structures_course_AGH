@@ -1,16 +1,17 @@
-# Proszę napisać funkcję znajdującą minimum i maksimum w tablicy o długości n, wykonując a 3/2n + c porównań.
+# Proszę zaimplementować funkcję, która mając na wejściu tablicę n elementów oblicza jednocześnie
+# jej największy i najmniejszy element wykonując 1.5n porównań.
 
 
 def min_max(T):
-    min = max = T[len(T)-1]
-    for i in range(0, len(T)-1, 2):
+    min = max = T[len(T) - 1]
+    for i in range(0, len(T) - 1, 2):
         print(i)
-        if T[i] < T[i+1]:
-            T[i], T[i+1] = T[i+1], T[i]
+        if T[i] < T[i + 1]:
+            T[i], T[i + 1] = T[i + 1], T[i]
         if T[i] > max:
             max = T[i]
-        elif T[i+1] < min:
-            min = T[i+1]
+        elif T[i + 1] < min:
+            min = T[i + 1]
     return min, max
 
 

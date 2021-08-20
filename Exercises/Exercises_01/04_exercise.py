@@ -1,4 +1,4 @@
-# Proszę napisać funkcję odwracającą kolejność węzłów w liście.
+# Proszę zaimplementować funkcję odwracającą listę jednokierunkową.
 
 
 class Node:
