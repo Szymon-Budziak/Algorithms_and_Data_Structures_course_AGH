@@ -1,4 +1,5 @@
-# Mamy dane dwa słowa a,b. Proszę podać algorytm sprawdzający czy są anagramami.
+# Proszę zaproponować algorytm, który mając dane dwa słowa A i B o długości n, każde nad alfabetem
+# długości k, sprawdza czy A i B są swoimi anagramami.
 # kot, tok - anagramy
 # kot, kat - nie anagramy
 from random import randint
@@ -11,7 +12,7 @@ def alloc(n):
 def check_anagrams(word1, word2):
     if len(word1) != len(word2):
         return False
-    counters = alloc(2**16)
+    counters = alloc(2 ** 16)
     for i in range(len(word1)):
         counters[ord(word1[i])] = 0
 
