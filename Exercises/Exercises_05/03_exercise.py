@@ -1,18 +1,19 @@
-# Znajdź długość najdłuższego wspólnego podciągu A[n], B[n].
+# Mamy dane dwie tablice, A[n] i B[n]. Należy znaleźć długość ich najdłuższego wspólnego
+# podciągu. (Klasyczny algorytm dynamiczny O(n**2)).
 
 
 def longest_common_subsequence(A, B):
     len_a = len(A)
     len_b = len(B)
-    T = [[0]*(len_a+1) for _ in range(len_b+1)]
-    for i in range(len_a+1):
-        for j in range(len_b+1):
+    T = [[0] * (len_a + 1) for _ in range(len_b + 1)]
+    for i in range(len_a + 1):
+        for j in range(len_b + 1):
             if i == 0 or j == 0:
                 T[i][j] = 0
-            if A[i-1] == B[j-1]:
-                T[i][j] = T[i-1][j-1]+1
+            if A[i - 1] == B[j - 1]:
+                T[i][j] = T[i - 1][j - 1] + 1
             else:
-                T[i][j] = max(T[i-1][j], T[i][j-1])
+                T[i][j] = max(T[i - 1][j], T[i][j - 1])
     return T[len_a][len_b]
 
 

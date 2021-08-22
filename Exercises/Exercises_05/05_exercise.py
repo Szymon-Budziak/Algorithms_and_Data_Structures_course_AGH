@@ -1,33 +1,24 @@
-# Dana jest szachownica A o wymiarach n x n. Należy przejść z pola (0,0) na pole (m,n)
-# korzystając jedynie z ruchów "w dół" oraz "w prawo". Wejście na dane pole kosztuje
-# tyle, co znajdująca się tam liczba.
+# Dany jest cięg macierzy A[1], A[2], ..., A[n]. Ktoś chce policzyć iloczyn A[1]A[2]...A[n]. Macierze
+# nie sa koniecznie kwadratowe (ale oczywiście znamy ich rozmiary). Zależnie w jakiej kolejnosci
+# wykonujemy mnożenia, koszt obliczeniowy moze byc różny — należy podać algorytm znajdujący koszt
+# mnożenia przy optymalnym doborze kolejności.
+from math import inf
 
 
-def traverse_chessboard(A, rows, cols):
-    T = [[0]*cols for _ in range(rows)]
-    T[0][0] = A[0][0]
-    for i in range(1, cols):
-        T[0][i] = T[0][i-1] + A[0][i]
-    for i in range(1, rows):
-        T[i][0] = T[i-1][0] + A[i][0]
-    for i in range(1, rows):
-        for j in range(1, cols):
-            T[i][j] = min(T[i][j-1], T[i-1][j]) + A[i][j]
-    i = j = 0
-    print(T[i][j], end=" -> ")
-    while i != rows-1 and j != cols-1:
-        if T[i][j+1] < T[i+1][j]:
-            print(A[i][j+1], end=" -> ")
-            j += 1
-        else:
-            print(A[i+1][j], end=" -> ")
-            i += 1
-    if i == rows-1 or j == cols-1:
-        print(A[-1][-1])
-    return T[-1][-1]
+def matrix_multiplication(T):
+    min_multi = [[0] * len(T) for _ in range(len(T))]
+    for i in range(1, len(T)):
+        min_multi[i][i] = 0
+    for L in range(2, len(T)):
+        for i in range(1, len(T) - L + 1):
+            k = i + L - 1
+            min_multi[i][k] = inf
+            for j in range(i, k):
+                p = min_multi[i][j] + min_multi[j + 1][k] + (T[i - 1] * T[j] * T[k])
+                if p < min_multi[i][k]:
+                    min_multi[i][k] = p
+    return min_multi[1][len(T) - 1]
 
 
-A = [[1, 3, 5, 8], [4, 2, 1, 7], [4, 3, 2, 3]]
-rows = len(A)
-cols = len(A[0])
-print(traverse_chessboard(A, rows, cols))
+T = [2, 4, 5, 7, 3]
+print(matrix_multiplication(T))
