@@ -2,23 +2,23 @@
 # ze zbioru 0, ..., n**2−1.
 
 
-def countsort(T, f):
-    B = [0] * len(T)
-    C = [0] * len(T)
+def counting_sort(T, f):
+    count = [0] * len(T)
+    result = [0] * len(T)
     for i in range(len(T)):
-        C[f(T[i])] += 1
+        count[f(T[i])] += 1
     for i in range(1, len(T)):
-        C[i] += C[i - 1]
+        count[i] += count[i - 1]
     for i in range(len(T) - 1, -1, -1):
-        C[f(T[i])] -= 1
-        B[C[f(T[i])]] = T[i]
+        count[f(T[i])] -= 1
+        result[count[f(T[i])]] = T[i]
     for i in range(len(T)):
-        T[i] = B[i]
+        T[i] = result[i]
 
 
 def sort_nsq(T):
-    countsort(T, lambda x: x % len(T))
-    countsort(T, lambda x: x // len(T))
+    counting_sort(T, lambda x: x % len(T))
+    counting_sort(T, lambda x: x // len(T))
     return T
 
 

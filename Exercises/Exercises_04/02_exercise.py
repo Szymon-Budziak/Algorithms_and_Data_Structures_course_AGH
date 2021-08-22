@@ -4,17 +4,17 @@ from math import log2
 
 
 def counting_sort(T, k):
-    A = [0] * k
-    B = [0] * len(T)
+    count = [0] * k
+    result = [0] * len(T)
     for i in range(len(T)):
-        A[T[i]] += 1
+        count[T[i]] += 1
     for i in range(1, k):
-        A[i] += A[i - 1]
+        count[i] += count[i - 1]
     for i in range(len(T) - 1, -1, -1):
-        A[T[i]] -= 1
-        B[A[T[i]]] = T[i]
+        count[T[i]] -= 1
+        result[count[T[i]]] = T[i]
     for i in range(len(T)):
-        T[i] = B[i]
+        T[i] = result[i]
 
 
 def insertion_sort(T):

@@ -1,7 +1,7 @@
-# A - n elementowa tablica, gdzie A[i] to number koloru i A[i] {0, 1, ..., k-1}
-# Znaleźć indeksy i < j takie, że:
-#   a) j - i jest jak najmniejsze
-#   b) w przedziale A[i], A[i+1], ..., A[j] pojawiają się wszystkie k kolory.
+# Dana jest tablica A zawierająca n elementów, z których każdy ma jeden z k kolorów. Proszę podać
+# możliwie jak najszybszy algorytm, który znajduje indeksy i oraz j takie, że wsród elementów
+# A[i], A[i + 1], ..., A[j] występują wszystkie k kolorów oraz wartość j−i jest minimalna
+# (innymi słowy, szukamy najkrótszego przedziału z wszystkimi kolorami).
 
 
 def find_colors(T, k):
@@ -9,10 +9,10 @@ def find_colors(T, k):
     zeros = k
     indexes = []
     i = j = A[0]
-    while j != len(T)+1:
+    while j != len(T) + 1:
         if j == len(T):
             if zeros == 0:
-                indexes.append((i, j-1))
+                indexes.append((i, j - 1))
             break
         elif zeros != 0:
             if A[T[j]] == 0:
@@ -20,7 +20,7 @@ def find_colors(T, k):
             A[T[j]] += 1
             j += 1
         else:
-            indexes.append((i, j-1))
+            indexes.append((i, j - 1))
             A[T[i]] -= 1
             if A[T[i]] == 0:
                 zeros += 1
