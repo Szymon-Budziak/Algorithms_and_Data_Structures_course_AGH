@@ -1,15 +1,14 @@
-# Tankowanie czołgu z cenami za paliwo
-# L - pojemność baku czołgu (litry)
-# Si - odległość stacji od punktu 0 (km)
-# czołg spala 1 l/km
-# Pi - cena za 1 listr na każdej stacji
-# Czołg startuje z pełnym bakiem. Obliczyć minimalny koszt dotarcia do punktu końcowego:
-#   a) na każdej stacji można tankować tyle ile się chce,
-#   b) jeśli tankujemy to do pełna.
+# Czołg jedzie z punktu A do punktu B. Spalanie czołgu to dokładnie jeden litr paliwa na jeden kilometr
+# trasy. W baku mieści się dokładnie L litrów paliwa. Trasa z A do B to prosta, na której znajdują się
+# stacje benzynowe (na pozycjach będących liczbami naturalnymi; A jest na pozycji 0). Proszę podać
+# algorytmy dla następujących przypadków:
+#     1) Wyznaczamy stacje tak, żeby koszt przejazdu był minimalny (w tym wypadku każda stacja ma
+# dodatkowo cenę za litr paliwa). Na każdej stacji możemy tankować dowolną ilość paliwa.
+#     2) j.w., ale jeśli na stacji tankujemy, to musimy zatankować do pełna.
 from math import inf
 
 
-# a)
+# 1)
 
 
 def tank_fueling(distance, fuel_tank, stops, prices):
@@ -32,7 +31,7 @@ def tank_fueling(distance, fuel_tank, stops, prices):
     return total_cost
 
 
-# b)
+# 2)
 
 
 def tank_fueling2(distance, fuel_tank, stops, prices):

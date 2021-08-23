@@ -1,6 +1,7 @@
-# Dany jest zbiór punktów X = {x 1 , . . . , x n } na prostej. Proszę podać algorytm,
-# który znajduje minimalną liczbę przedziałów jednostkowych domkniętych, potrzebnych
-# do pokrycia wszystkich punktów z X.
+# Dany jest zbiór punktów X = {x[1], ..., x[n]} na prostej. Proszę podać algorytm, który znajduje
+# minimalną liczbę przedziałów jednostkowych domkniętych, potrzebnych do pokrycia wszystkich punktów z X.
+# (Przykład: Jeśli X = {0.25, 0.5, 1.6} to potrzeba dwóch przedziałów, np. [0.2, 1.2] oraz [1.4, 2.4]).
+
 
 def cover_points(X):
     X.sort()

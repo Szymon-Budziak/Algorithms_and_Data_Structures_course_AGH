@@ -1,9 +1,8 @@
-# Tankowanie czołgu
-# L - pojemność baku czołgu (litry)
-# Si - odległość stacji od punktu 0 (km)
-# czołg spala 1 l/km
-# Czołg startuje z pełnym bakiem. Obliczyć minimalną liczbę tankowań, żeby dotrzeć
-# do punktu końcowego.
+# Czołg jedzie z punktu A do punktu B. Spalanie czołgu to dokładnie jeden litr paliwa na jeden kilometr
+# trasy. W baku mieści się dokładnie L litrów paliwa. Trasa z A do B to prosta, na której znajdują się
+# stacje benzynowe (na pozycjach będących liczbami naturalnymi; A jest na pozycji 0). Proszę podać
+# algorytmy dla następujących przypadków:
+#     1. Wyznaczamy stacje na których tankujemy tak, żeby łączna liczba tankowań była minimalna.
 
 
 def tank_fueling(distance, fuel_tank, stops):
@@ -13,7 +12,7 @@ def tank_fueling(distance, fuel_tank, stops):
     while limit < distance:
         if current_refill >= len(stops) or stops[current_refill] > limit:
             return False
-        while current_refill < len(stops)-1 and stops[current_refill+1] <= limit:
+        while current_refill < len(stops) - 1 and stops[current_refill + 1] <= limit:
             current_refill += 1
         refills += 1
         limit = stops[current_refill] + fuel_tank
