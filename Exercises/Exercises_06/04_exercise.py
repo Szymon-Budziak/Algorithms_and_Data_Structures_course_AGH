@@ -1,10 +1,9 @@
-# Pewna żaba skacze po osi liczbowej. Ma się dostać z 0 do n-1., skacząc wyłącznie
-# w kierunku większych liczb. Skok z liczby i do j (j>i) kosztuje ją j-i jednostek
-# energii, a jej energia nigdy nie może spaść poniżej 0. Na początku żaba ma 0
-# jednostek energi, ale na szczęście na niektórych liczbach - także na 0 - leżą
-# przekąski o określonej wartości energetycznej (wartości przekąski dodaje się do
-# aktualnej energii żaby). Proszę zaproponować algorytm, który oblicza minimalną
-# liczbę skoków potrzebną na dotarcie z 0 do n-1 mając daną tablicę A z wartościami
+# Pewna żaba skacze po osi liczbowej. Ma się dostać z zera do n−1, skacząc wyłącznie w kierunku
+# większych liczb. Skok z liczby i do liczby j (j > i) kosztuje ją j − i jednostek energii, a jej
+# energia nigdy nie może spaść poniżej zera. Na początku żaba ma 0 jednostek energii, ale na szczęście
+# na niektórych liczbach — także na zerze — leżą przekąski o określonej wartości energetycznej (wartość
+# przekąski dodaje się do aktualnej energii Zbigniewa). Proszę zaproponować algorytm, który oblicza
+# minimalną liczbę skoków potrzebną na dotarcie z 0 do n − 1 majać daną tablicę A z wartościami
 # energetycznymi przekąsek na każdej z liczb.
 from math import inf
 
