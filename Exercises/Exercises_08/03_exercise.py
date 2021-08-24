@@ -1,4 +1,5 @@
-# Proszę zaimplementować algorytm sprawdzający czy graf jest dwudzielny.
+# Proszę zaimplementować algorytm sprawdzający czy graf jest dwudzielny (czyli zauważyć, że to
+# 2-kolorowanie i użyć DFS lub BFS).
 from queue import Queue
 
 

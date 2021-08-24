@@ -1,6 +1,6 @@
-# Proszę podać jak najszybszy algorytm, który znajduje w grafie cykl długości dokładnie 4
-# (trywialny algorytm ma złożoność O(n^4), gdzie n to liczba wierzchołków, chodzi
-# o rozwiązanie szybsze).
+# Dany jest graf nieskierowany G zawierający n wierzchołków. Zaproponuj algorytm, który stwierdza czy
+# w G istnieje cykl składający się z dokładnie 4 wierzchołków. Zakładamy, że graf reprezentowany jest
+# przez macierz sasiedztwa A.
 
 
 def four_length_cycle(graph):
@@ -17,7 +17,7 @@ def four_length_cycle(graph):
                         result.append(i)
                         result.append(j)
                         return True, result
-    return None
+    return None, None
 
 
 graph = [[0, 0, 1, 0, 0, 0],

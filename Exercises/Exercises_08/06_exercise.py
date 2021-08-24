@@ -1,5 +1,5 @@
-# Proszę zaimplementować algorytm który dla danego wierzchołka efektywnie znajdzie najkrótszą
-# ścieżkę do dowolnego innego wierzchołka za pomocą BFS.
+# Proszę zaimplementować algorytm BFS tak, żeby znajdował najkrótsze ścieżki w grafie i następnie,
+# żeby dało się wypisać najkrotszą ścieżkę z zadanego punktu startowego do wskazanego wierzchołka.
 from queue import Queue
 from math import inf
 

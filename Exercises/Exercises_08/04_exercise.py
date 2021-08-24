@@ -1,5 +1,4 @@
-# Proszę zaimplementować algorytm który policzy liczbę spójnych składowych w grafie
-# (reprezentacja macierzowa).
+# Proszę zaimplementować algorytm który policzy liczbę spójnych składowych w grafie (reprezentacja macierzowa).
 from queue import Queue
 
 

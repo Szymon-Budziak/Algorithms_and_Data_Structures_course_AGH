@@ -1,10 +1,11 @@
 # Mówimy, że wierzchołek t w grafie skierowanym jest uniwersalnym ujściem, jeśli:
 #   (a) z każdego innego wierzchołka v istnieje krawędź z v do t, oraz
 #   (b) nie istnieje żadna krawędź wychodząca z t.
-# Proszę podać algorytm znajdujący ujście (jeśli istnieje) przy reprezentacji macierzowej grafu.
+# Proszę podać algorytm znajdujący uniwersalne ujście (jeśli istnieje) przy reprezentacji macierzowej grafu.
 
 
 # a) solution in O(n^2)
+
 
 def universal_estuary(graph):
     result = []
@@ -27,6 +28,7 @@ def universal_estuary(graph):
 
 
 # b) solution in O(n)
+
 
 def universal_estuary2(graph):
     i = j = 0
