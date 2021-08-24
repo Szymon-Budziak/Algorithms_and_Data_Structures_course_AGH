@@ -7,7 +7,7 @@ from math import inf
 
 
 def find_path(graph, s, t):
-    graph.repeated_numbers()
+    graph.sort(key=lambda x: x[2], reverse=True)
     queue = PriorityQueue()
     queue.put((0, inf, s))
     visited = [False] * (len(graph))
