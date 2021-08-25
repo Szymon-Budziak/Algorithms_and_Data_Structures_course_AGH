@@ -3,7 +3,7 @@
 # to hardware requirements. We are the owner of a cafe and we know haw many customers (possibly zero) will
 # would like to use the application tomorrow. We assume that each client occupies a computer for the
 # whole day. What an application should we install on each of the computers so that all customers can use
-# the application which they want. If there is not such an assignment, the algorithm should consider that.\
+# the application which they want. If there is not such an assignment, the algorithm should consider that.
 from queue import Queue
 from math import inf
 
