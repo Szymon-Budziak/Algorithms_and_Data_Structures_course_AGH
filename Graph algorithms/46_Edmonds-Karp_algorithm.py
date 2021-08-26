@@ -1,4 +1,4 @@
-# The Ford-Fulkerson algorithm is a greedy algorithm that computes the maximum flow in a flow network (graph).
+# The Edmonds-Karp algorithm computes the maximum flow in a flow network (graph).
 from queue import Queue
 from math import inf
 
@@ -18,7 +18,7 @@ def bfs(graph, s, t, parent):
     return visited[t]
 
 
-def ford_fulkerson_algorithm(graph, s, t):
+def edmonds_karp_algorithm(graph, s, t):
     parent = [None] * len(graph)
     max_flow = 0
     while bfs(graph, s, t, parent):
@@ -47,4 +47,4 @@ graph = [[0, 11, 12, 17, 0, 0, 0, 0, 0, 0],
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 3],
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 8],
          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
-print(ford_fulkerson_algorithm(graph, 0, 9))
+print(edmonds_karp_algorithm(graph, 0, 9))
