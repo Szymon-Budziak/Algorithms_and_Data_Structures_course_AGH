@@ -15,7 +15,7 @@ def prim_algorithm(graph, source):
         dist, u = queue.get()
         visited[u] = True
         for v in graph[u]:
-            if key[v[0]] > v[0] and not visited[v[0]]:
+            if key[v[0]] > v[1] and not visited[v[0]]:
                 parent[v[0]] = u
                 key[v[0]] = v[1]
                 queue.put((key[v[0]], v[0]))
