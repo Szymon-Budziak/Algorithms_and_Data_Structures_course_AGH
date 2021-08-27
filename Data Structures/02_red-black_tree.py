@@ -1,106 +1,114 @@
+# Red-black tree implementation
 class RBNode:
     def __init__(self, value):
         self.value = value
         self.right = None
         self.left = None
         self.parent = None
-        self.red = False
+        self.color = 'BLACK'
 
 
-def fix_tree(root, node):
-    while node != root and node.parent.red:
-        if node.parent == node.parent.parent.right:
-            uncle = node.parent.parent.left
-            if uncle.red:
-                uncle.red = False
-                node.parent.red = False
-                node.parent.parent.red = True
-                node = node.parent.parent
-            else:
-                if node == node.parent.left:
-                    node = node.parent
-                    root = rotate_right(root, node)
-                node.parent.red = False
-                node.parent.parent.red = True
-                root = rotate_left(root, node.parent.parent)
-        elif node.parent == node.parent.parent.left:
-            uncle = node.parent.parent.right
-            if uncle.red:
-                uncle.red = False
-                node.parent.red = False
-                node.parent.parent.red = True
-                node = node.parent.parent
-            else:
-                if node == node.parent.right:
-                    node = node.parent
-                    root = rotate_left(root, node)
-                node.parent.red = False
-                node.parent.parent.red = True
-                root = rotate_right(root, node.parent.parent)
-    root.red = False
+class RBTree:
+    def __init__(self):
+        self.nil = RBNode(0)
+        self.root = self.nil
 
 
-def insert(root, value):
-    new_node = RBNode(value)
-    new_node.red = True
-    parent = None
-    current = root
-    while current is not None:
-        parent = current
-        if new_node.value < current.value:
-            current = current.left
-        elif new_node.value > current.value:
-            current = current.right
+def rotate_left(T, x):
+    y = x.right
+    x.right = y.left
+    if y.left != T.nil:
+        y.left.parent = x
+    y.parent = x.parent
+    if x.parent == T.nil:
+        T.root = y
+    elif x == x.parent.left:
+        x.parent.left = y
+    else:
+        x.parent.left = y
+    y.left = x
+    x.parent = y
+    return
+
+
+def rotate_right(T, x):
+    y = x.left
+    x.left = y.right
+    if y.right != T.nil:
+        y.right.parent = x
+    y.parent = x.parent
+    if x.parent == T.nil:
+        T.root = y
+    elif x == x.parent.right:
+        x.parent.right = y
+    else:
+        x.parent.right = y
+    y.right = x
+    x.parent = y
+
+
+def insert(T, value):
+    z = RBNode(value)
+    y = T.nil
+    x = T.root
+    while x != T.nil:
+        y = x
+        if z.value < x.value:
+            x = x.left
         else:
-            return
-    new_node.parent = parent
-    if new_node.value < parent.value:
-        parent.left = new_node
+            x = x.right
+    z.parent = y
+    if y == T.nil:
+        T.root = z
+    elif z.value < y.value:
+        y.left = z
     else:
-        parent.right = new_node
-    fix_tree(root, new_node)
-    return root
+        y.right = z
+    z.left = T.nil
+    z.right = T.nil
+    z.color = 'RED'
+    insert_fix_tree(T, z)
 
 
-def rotate_left(root, node):
-    right_node = node.right
-    node.right = right_node.left
-    if right_node.left is not None:
-        right_node.left.parent = node
-    right_node.parent = node.parent
-    if node.parent is None:
-        root = right_node
-    elif node == node.parent.left:
-        node.parent.left = right_node
-    else:
-        node.parent.right = right_node
-    right_node.left = node
-    node.parent = right_node
-    return root
+def insert_fix_tree(T, z):
+    while z.parent.color == 'RED':
+        if z.parent == z.parent.parent.left:
+            y = z.parent.parent.right
+            if y is not None and y.color == 'RED':
+                z.parent.color = 'BLACK'
+                y.color = 'BLACK'
+                z.parent.parent.color = 'RED'
+                z = z.parent.parent
+            else:
+                if z == z.parent.right:
+                    z = z.parent
+                    rotate_left(T, z)
+                z.parent.color = 'BLACK'
+                z.parent.parent.color = 'RED'
+                rotate_right(T, z.parent.parent)
+        else:
+            y = z.parent.parent.left
+            if y.color == 'RED':
+                z.parent.color = 'BLACK'
+                y.color = 'BLACK'
+                z.parent.parent.color = 'RED'
+                z = z.parent.parent
+            else:
+                if z == z.parent.left:
+                    z = z.parent
+                    rotate_right(T, z)
+                z.parent.color = 'BLACK'
+                z.parent.parent.color = 'RED'
+                rotate_left(T, z.parent.parent)
+    T.root.color = 'BLACK'
 
 
-def rotate_right(root, node):
-    left_node = node.left
-    node.left = left_node.right
-    if left_node.right is not None:
-        left_node.right.parent = node
-    left_node.parent = node.parent
-    if node.parent is None:
-        root = left_node
-    elif node == node.parent.right:
-        node.parent.right = left_node
-    else:
-        node.parent.left = left_node
-    left_node.right = node
-    node.parent = left_node
-    return root
-
-
-root = RBNode(10)
-insert(root, 5)
-insert(root, 20)
-insert(root, 3)
-insert(root, 25)
-insert(root, 15)
-insert(root, 12)
-insert(root, 30)
+T = RBTree()
+insert(T, 10)
+insert(T, 5)
+insert(T, 20)
+insert(T, 3)
+insert(T, 25)
+insert(T, 15)
+insert(T, 12)
+insert(T, 30)
