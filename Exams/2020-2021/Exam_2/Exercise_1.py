@@ -32,13 +32,17 @@ def dfs(graph, visited, u):
 
 
 def intuse(I, x, y):
-    vertices = []
+    T = []
     for i in range(len(I)):
-        if I[i][0] not in vertices:
-            vertices.append(I[i][0])
-        if I[i][1] not in vertices:
-            vertices.append(I[i][1])
-    vertices.sort()
+        T.append(I[i][0])
+        T.append(I[i][1])
+    T.sort()
+    vertices = [T[0]]
+    idx = 0
+    for i in range(1, len(T)):
+        if T[i] != vertices[idx]:
+            vertices.append(T[i])
+            idx += 1
     result = []
     if binary_search(vertices, x) == -1 or binary_search(vertices, y) == -1:
         return result
