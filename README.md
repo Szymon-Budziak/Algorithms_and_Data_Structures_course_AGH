@@ -1,5 +1,94 @@
-# ASD_exercises_solutions
-This is the repository with solutions from ASD (Algorytmy i Struktury Danych - Algorithms and Data Structures) exercises at AGH. Here I will share all of the codes written by me and codes written during exercises. All codes are written in English but the content of the exercises are written in Polish. Also all codes are written according to the PEP 8 style.
+# ASD exercises solutions
+This is the repository with solutions from ASD (Algorytmy i Struktury Danych - Algorithms and Data Structures) exercises at AGH. Here I will share all of the codes written by me and codes written during exercises. All codes are written in English but the content of the exercises are written in English and Polish. Also all codes are written according to the PEP 8 style.
+
+## Table of contents
+Table of contents consists of specific sections in repository. Algorithm sections consists of algorithms only. Each section, in addition to the algorithms, also contains many tasks that use algorithms which are previously implemented.
+1. [Sorting algorithms](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Sort):
+   - [insertion sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/01_insertion_sort.py)
+   - [merge sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/02.02_merge_sort_faster.py)
+   - [heap sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/03.02_heapsort_faster.py)
+   - [quicksort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/04.01_quicksort.py)
+   - [quickselect](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/04.05_quickselect.py)
+   - [counting sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/05_counting_sort.py)
+   - [radix sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/06_radix_sort.py)
+   - [bucket sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/06_radix_sort.py)
+   - [median of medians](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/08_median_of_medians.py)
+   - [binary search](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Sort/09_binary_search.py)
+2. [Dynamic programming](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Dynamic%20Programming):
+   - [rod cutting](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Dynamic%20Programming/01_rod_cutting.py)
+   - [matrix-chain multiplication](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Dynamic%20Programming/02_matrix-chain_multiplication.py)
+   - [longest increasing subsequence](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Dynamic%20Programming/03_longest_increasing_subsequence.py)
+   - [knapsack problem](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Dynamic%20Programming/04_knapsack_problem.py)
+   - [coin change problem](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Dynamic%20Programming/05_coin_change_problem.py)
+3. [Greedy algorithms](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Greedy%20algorithms):
+   - [activity selection](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Greedy%20algorithms/01_activity_selection.py)
+   - [car fueling](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Greedy%20algorithms/02_car_fueling.py)
+   - [coin change](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Greedy%20algorithms/03_coin_change.py)
+4. [Graph algorithms](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Graph%20algorithms):
+   - [DFS on adjacency list](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/01.1_DFS_adjacency_list.py)
+   - [DFS on adjacency matrix](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/01.2_DFS_adjacency_matrix.py)
+   - [BFS on adjacency list](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/02.1_BFS_adjacency_list.py)
+   - [BFS on adjacency matrix](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/02.2_BFS_adjacency_matrix.py)
+   - [tree diameter](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/11_tree_diameter.py)
+   - [topological sort](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/12_topological_sort.py)
+   - [strongly connected components](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/14_strongly_connected_components.py)
+   - [bridges](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/15_bridges.py)
+   - [Kruskal's MST on adjacency list](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/23_Kruskal's_MST_algorithm_adjacency_list.py)
+   - [Kruskal's MST on adjacency matrix](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/24_Kruskal's_MST_algorithm_adjacency_matrix.py)
+   - [Prim's MST on adjacency list](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/25_Prim's_MST_algorithm_adjacency_list.py)
+   - [Prim's MST on adjacency matrix](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/26_Prim's_MST_algorithm_adjacency_matrix.py)
+   - [Dijkstra on adjacency list](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/27_Dijkstra's_algorithm_adjacency_list.py)
+   - [Dijkstra on adjacency matrix](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/28_Dijkstra's_algorithm_adjacency_matrix.py)
+   - [Bellman–Ford algorithm](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/35_Bellman-Ford_algorithm.py)
+   - [Floyd–Warshall algorithm](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/36_Floyd-Warshall_algorithm.py)
+   - [Johnson's algorithm](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/45_Johnson's_algorithm.py)
+   - [Edmonds–Karp algorithm](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/46_Edmonds-Karp_algorithm.py)
+   - [Ford–Fulkerson algorithm](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Graph%20algorithms/53_Ford-Fulkerson_algorithm.py)
+5. [Data structures](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Data%20Structures):
+   - [BST tree](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Data%20Structures/01_BST_tree.py)
+   - [red-black tree](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Data%20Structures/02_red-black_tree.py)
+   - [B-tree](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Data%20Structures/03_B-tree.py)
+   - [interval tree](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Data%20Structures/04_interval_tree.py)
+   - [hash table](https://github.com/Szymon-Budziak/ASD_exercises_solutions/blob/main/Data%20Structures/05_hash_table.py)
+6. [Exercises](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises):
+   - [Exercise 1](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_01)
+   - [Exercise 2](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_02)
+   - [Exercise 3](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_03)
+   - [Exercise 4](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_04)
+   - [Exercise 5](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_05)
+   - [Exercise 6](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_06)
+   - [Exercise 7](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_07)
+   - [Exercise 8](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_08)
+   - [Exercise 9](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_09)
+   - [Exercise 10](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_10)
+   - [Exercise 11](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Exercises/Exercises_11)
+7. [Obligatory tasks](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks):
+   - [Task 1](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_01)
+   - [Task 2](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_02)
+   - [Task 3](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_03)
+   - [Task 4](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_04)
+   - [Task 5](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_05)
+   - [Task 6](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_06)
+   - [Task 7](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_07)
+   - [Task 8](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_08)
+   - [Task 9](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Obligatory%20tasks/Obligatory_task_09)
+8. [Offline tasks](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks):
+   - [Task 1](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_01)
+   - [Task 2](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_02)
+   - [Task 3](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_03)
+   - [Task 4](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_04)
+   - [Task 5](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_05)
+   - [Task 6](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_06)
+   - [Task 7](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_07)
+   - [Task 8](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_08)
+   - [Task 9](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_09)
+   - [Task 10](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_10)
+   - [Task 11](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Offline%20tasks/Offline_task_11)
+9. [Colloquiums](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Colloquiums):
+   - [2015-2016](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Colloquiums/2015-2016)
+   - [2016-2017](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Colloquiums/2016-2017)
+   - [2019-2020](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Colloquiums/2019-2020)
+   - [2020-2021](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Colloquiums/2020-2021)
 
 ## Licence
 If you use this repository/code for classes or for something else, please give me a star or a fork :). It will help me know that my work is important and useful to someone.
