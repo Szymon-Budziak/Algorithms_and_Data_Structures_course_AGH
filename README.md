@@ -1,5 +1,7 @@
 # ASD exercises solutions
-This is the repository with solutions from ASD (Algorytmy i Struktury Danych - Algorithms and Data Structures) exercises at AGH. Here I will share all of the codes written by me and codes written during exercises. All codes are written in English but the content of the exercises are written in English and Polish. Also all codes are written according to the PEP 8 style. This is probably the largest repository with algorithms, solved tasks and additional exercises from the ASD course at AGH.
+This is the repository with solutions from ASD (Algorytmy i Struktury Danych - Algorithms and Data Structures) exercises at AGH. Here I will share all of the codes written by me and codes written during exercises. All codes are written in English but the content of the exercises are written in English and Polish. Also all codes are written according to the PEP 8 style.
+
+**This is probably the largest repository with algorithms, solved tasks and additional exercises from the ASD course at the AGH. It contains more than 300 unique codes.**
 ## Table of contents
 Table of contents consists of specific sections in repository. Algorithm sections consists of algorithms only. Each section, in addition to the algorithms, also contains many tasks that use algorithms which are previously implemented.
 1. [Sorting algorithms](https://github.com/Szymon-Budziak/ASD_exercises_solutions/tree/main/Sort):
