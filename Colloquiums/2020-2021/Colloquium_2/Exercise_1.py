@@ -20,16 +20,16 @@ from Exercise_1_tests import runtests
 
 
 def get_result(DP, students, parents, cost, buildings, idx, p):
+    if idx is None:
+        return buildings
     if idx == 0:
         if p >= cost[0]:
             buildings.append(0)
-            return buildings
-        else:
-            return buildings
-    if DP[idx][p] == DP[parents[idx]][p - cost[idx]] + students[idx] and parents[idx] is not None and p >= cost[idx]:
-        buildings.append(idx)
-        return get_result(DP, students, parents, cost, buildings, parents[idx], p - cost[idx])
-    return get_result(DP, students, parents, cost, buildings, idx - 1, p)
+        return buildings
+    if DP[idx - 1][p] == DP[idx][p]:
+        return get_result(DP, students, parents, cost, buildings, idx - 1, p)
+    buildings.append(idx)
+    return get_result(DP, students, parents, cost, buildings, parents[idx], p - cost[idx])
 
 
 def select_buildings(T, p):
@@ -37,11 +37,11 @@ def select_buildings(T, p):
         T[i] = (i, T[i][0], T[i][1], T[i][2], T[i][3])
     T.sort(key=lambda x: x[3])
     cost = [0] * len(T)
-    number_of_students = [0] * len(T)
+    num_of_students = [0] * len(T)
     parents = [None] * len(T)
     DP = [[0] * (p + 1) for _ in range(len(T))]
     for i in range(len(T)):
-        number_of_students[i] = (T[i][3] - T[i][2]) * T[i][1]
+        num_of_students[i] = (T[i][3] - T[i][2]) * T[i][1]
         cost[i] = T[i][4]
         for j in range(i - 1, -1, -1):
             if T[i][2] > T[j][3]:
@@ -51,9 +51,11 @@ def select_buildings(T, p):
         for j in range(p + 1):
             DP[i][j] = DP[i - 1][j]
             if parents[i] is not None and j >= cost[i]:
-                DP[i][j] = max(DP[i][j], DP[parents[i]][j - cost[i]] + number_of_students[i])
+                DP[i][j] = max(DP[i][j], DP[parents[i]][j - cost[i]] + num_of_students[i])
+            elif parents[i] is None and j >= cost[i]:
+                DP[i][j] = max(DP[i][j], num_of_students[i])
     buildings = []
-    get_result(DP, number_of_students, parents, cost, buildings, len(T) - 1, p)
+    get_result(DP, num_of_students, parents, cost, buildings, len(T) - 1, p)
     for i in range(len(buildings)):
         buildings[i] = T[buildings[i]][0]
     buildings.sort()
